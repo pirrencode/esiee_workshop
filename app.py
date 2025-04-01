@@ -19,4 +19,15 @@ surname = "Grey"
 student_name = name + " " + surname
 print(student_name)
 
+# TASK
+# 1. Write IF ELSE statement to validate if x is larger than y. Return TRUE if YES
+
+def compareFunc (x , y):
+  if y > x:
+    return True
+  return False
+    
+print(compareFunc(300,200))
+
+
 
