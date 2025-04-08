@@ -43,7 +43,36 @@ print(compareFunc2(300,200,600))
 
 # TASK 1
 
+def mix_ingredients():
+  return "Ingredients are ready"
 
+def put_pizza_in_a_stove():
+  return "In Stove"
+
+def bake_pizza():
+  return "Baked"
+
+def serve_pizza():
+  return "Pizza is served to my friends"
+
+ingredients = ("onions","tomatos","salami","salmon","champignon","cheese")
+
+def cook_pizza():
+  if (len(ingredients) > 2) AND ( in ingredients = "cheese" and "onions" and "tomatos"):
+    mix_ingredients()
+  else:
+   return "Please mix proper ingredients"
+
+ if (mix_ingredients()):
+   put_pizza_in_a_stove()
+
+ if (put_pizza_in_a_stove() = "In Stove"):
+   bake_pizza()
+   serve_pizza()
+
+  
+  
+  
 
 #TASK 2
 
