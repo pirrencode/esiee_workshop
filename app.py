@@ -20,7 +20,7 @@ student_name = name + " " + surname
 print(student_name)
 
 # TASK
-# 1. Write IF ELSE statement to validate if x is larger than y. Return TRUE if YES
+# TASK 1. Write IF ELSE statement to validate if x is larger than y. Return TRUE if YES
 
 def compareFunc (x , y):
   if y > x:
@@ -29,7 +29,7 @@ def compareFunc (x , y):
     
 print(compareFunc(300,200))
 
-# 2. Write IF ELSE statement to validate if x is larger than y and less than b. Return TRUE if YES
+# TASK 2. Write IF ELSE statement to validate if x is larger than y and less than b. Return TRUE if YES
 
 def compareFunc2 (x , y, b):
   if (x > y) and (x < b):
@@ -39,3 +39,36 @@ def compareFunc2 (x , y, b):
 print(compareFunc2(300,200,600))
 
 
+# 08.04.2025. Day 2
+
+# TASK 1
+
+
+
+#TASK 2
+
+def check_number(num):
+    if num > 0:
+        print("The number is positive.")
+    elif num < 0:
+        print("The number is negative.")
+    else:
+        print("The number is zero.")
+
+# TASK 3
+
+# Using for loop
+print("Using for loop:")
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i, end=" ")
+        
+print("\n")
+
+# Using while loop
+print("Using while loop:")
+num = 1
+while num <= 20:
+    if num % 2 == 0:
+        print(num, end=" ")
+    num += 1
