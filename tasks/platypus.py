@@ -6,6 +6,7 @@ from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
+
     """Base class representing generic animals."""
 
     def __init__(self, name: str) -> None:
@@ -14,11 +15,6 @@ class Animal(ABC):
     def describe(self) -> str:
         """Return a short description of the animal."""
         return f"{self.name} is an animal"
-
-    @abstractmethod
-    def make_sound(self) -> str:
-        """Return the sound made by the animal."""
-        raise NotImplementedError
 
 
 class Mammal(Animal):
@@ -33,16 +29,7 @@ class Mammal(Animal):
         return f"{self.name} nurses its young"
 
 
-class EggLayer(ABC):
-    """Mixin for animals that lay eggs."""
 
-    @abstractmethod
-    def lay_eggs(self) -> str:
-        """Return a string describing egg-laying."""
-        raise NotImplementedError
-
-
-class Platypus(Mammal, EggLayer):
     """Platypus is a mammal that also lays eggs."""
 
     def __init__(self, name: str) -> None:
@@ -50,11 +37,7 @@ class Platypus(Mammal, EggLayer):
         self.can_swim = True
         self.has_bill = True
 
-    def make_sound(self) -> str:
-        """Return the typical sound of a platypus."""
-        return f"{self.name} growls softly"
 
-    def lay_eggs(self) -> str:
         return f"{self.name} lays eggs"
 
     def swim(self) -> str:
