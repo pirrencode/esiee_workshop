@@ -14,3 +14,12 @@ MSFT: 320.10
 ```
 
 If `yfinance` is not installed, the script will report an error.
+
+## Platypus Example
+
+The `tasks/platypus.py` module demonstrates multi-level inheritance in
+Python. It defines an abstract `Animal` base class that requires
+subclasses to implement a `make_sound` method. The `Mammal` class extends
+`Animal`, while an `EggLayer` mixin declares an abstract `lay_eggs`
+method. The `Platypus` class combines these abstractions and implements
+behaviours such as `lay_eggs`, `make_sound` and `swim`.
