@@ -1,62 +1,63 @@
-# In this python program we will work on classess and objects
+"""Simple superhero utilities."""
 
-# TASK 1. Let's create a class -> superhero
-# DEFINE A CLASS
 
-# TASK 2. ADD POWER, ORIGIN AND FRIENDS ATTRIBUTES
+class Superhero:
+    def __init__(self, name, powers, origin, friends, age):
+        self.name = name
+        self.powers = list(powers)
+        self.origin = origin
+        self.friends = friends
+        self.age = age
+        self.energy = 100
 
-class superhero :
-  def __init__(self, name, power, origin, friends):
-    self.name = name
-    self.power = power
-    self.origin = origin
-    self.friends = friends
-    self.age = age
-    self.energy = 100
-  def printName(self):
-    print(self.name)
-  def printAttributes(self):
-    print("Superhero attributes are: ")
-    print(self.name)
-    print(self.power)
-    print(self.origin)
-    print(self.friends)
-    print(self.age)
-    
-# Ironman = superhero("IronMan")
-SuperMan = superhero("SuperMan","flight", "plante X" , "SuperWoman",25)
-Batman = superhero("Batman",["flight","super strong","brave","supercar"],"Earth","Catwoman",35)
-Ironman.printName()
-SuperMan.printAttributes()
+    def print_name(self):
+        print(self.name)
 
-# TASK 3. Add methods for use of 5 superpowers (minimum). Method must initialize a superpower
-def fly(self):
-  self.add_power("Flight")
-  self.energy = energy - 50
-  print(f"{self.name} "takes off into the sky")
-  
-def turn_invisible(self):
-  if energy => 1:
-    self.add_power("Invisibility")
-    self.energy = energy - 1
-    print(f"{self.name} "Becomes completely invisible")
+    def print_attributes(self):
+        print("Superhero attributes are:")
+        print(self.name)
+        print(self.powers)
+        print(self.origin)
+        print(self.friends)
+        print(self.age)
 
-  def super_strength(self):
-    if energy => 10:  
-      self.add_power("super strength")
-      self.energy = energy - 10
-      print(f"{self.name} "Become strong")
+    def add_power(self, power):
+        if power not in self.powers:
+            self.powers.append(power)
 
- def teleportation(self):
-     if energy => 10:
-      self.add_power("teleportation")
-      self.energy = energy - 10
-      print(f"{self.name} "instantly teleport")
+    def fly(self):
+        self.add_power("Flight")
+        self.energy -= 50
+        print(f"{self.name} takes off into the sky")
 
-def shoot_lasers(self):
-    if energy => 20:
-      self.add_power("shoot lasers")
-      self.energy = energy - 20
-      print(f"{self.name} "shoots lasers from eyes")
-  
-# TASK4. CREATE ACTIONS TO USE SUPERPOWERS
+    def turn_invisible(self):
+        if self.energy >= 1:
+            self.add_power("Invisibility")
+            self.energy -= 1
+            print(f"{self.name} becomes completely invisible")
+
+    def super_strength(self):
+        if self.energy >= 10:
+            self.add_power("Super Strength")
+            self.energy -= 10
+            print(f"{self.name} becomes strong")
+
+    def teleportation(self):
+        if self.energy >= 10:
+            self.add_power("Teleportation")
+            self.energy -= 10
+            print(f"{self.name} instantly teleports")
+
+    def shoot_lasers(self):
+        if self.energy >= 20:
+            self.add_power("Shoot Lasers")
+            self.energy -= 20
+            print(f"{self.name} shoots lasers from eyes")
+
+
+# Example usage
+if __name__ == "__main__":
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    ironman.print_name()
+    ironman.print_attributes()
+    ironman.fly()
