@@ -1,7 +1,12 @@
 """Simple multi-level inheritance example with a Platypus class."""
 
+from __future__ import annotations
 
-class Animal:
+from abc import ABC, abstractmethod
+
+
+class Animal(ABC):
+
     """Base class representing generic animals."""
 
     def __init__(self, name: str) -> None:
@@ -24,7 +29,7 @@ class Mammal(Animal):
         return f"{self.name} nurses its young"
 
 
-class Platypus(Mammal):
+
     """Platypus is a mammal that also lays eggs."""
 
     def __init__(self, name: str) -> None:
@@ -32,8 +37,7 @@ class Platypus(Mammal):
         self.can_swim = True
         self.has_bill = True
 
-    def lay_eggs(self) -> str:
-        """Return a string describing egg-laying."""
+
         return f"{self.name} lays eggs"
 
     def swim(self) -> str:
