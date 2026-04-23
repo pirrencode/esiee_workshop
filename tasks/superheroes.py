@@ -1,8 +1,5 @@
-"""Simple superhero utilities."""
-
-
 class Superhero:
-    def __init__(self, name, powers, origin, friends, age, alignment):
+    def _init_(self, name, powers, origin, friends, age, alignment):
         self.name = name
         self.powers = list(powers)
         self.origin = origin
@@ -57,24 +54,22 @@ class Superhero:
             print(f"{self.name} shoots lasers from eyes")
 
     def time_travel(self):
-        if self.energy >= 30:
+        if self.energy >= 80:
             self.add_power("Time Travel")
-            self.energy -= 30
+            self.energy -= 80
             print(f"{self.name} travels through time")
 
-    def heal(self):
-        if self.energy >= 15:
-            self.add_power("Healing")
-            self.energy -= 15
-            print(f"{self.name} heals rapidly")
+    def mind_control(self):
+        if self.energy >= 30:
+            self.add_power("Mind Control")
+            self.energy -= 30
+            print(f"{self.name} controls minds")
 
-# Example usage
-if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
-    thor = Superhero("Thor", ["Lightning", "Strength"], "Asgard", ["Loki"], 1500, "Hero")
-    loki = Superhero("Loki", ["Magic", "Illusion"], "Jotunheim", ["Thor"], 1050, "Anti-Hero")
-    ironman.print_name()
+if _name_ == "_main_":
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, "good")
+    thanos = Superhero("Thanos", ["strength"], "Titan", "None", 1000, "bad")
+    spiderman = Superhero("Spider-Man", ["web"], "Earth", "Ned", 18, "good")
+
     ironman.print_attributes()
-    ironman.fly()
-
-    
+    thanos.time_travel()
+    spiderman.mind_control()
