@@ -1,6 +1,5 @@
 """Simple superhero utilities."""
 
-
 class Superhero:
     def __init__(self, name, powers, origin, friends, age, alignment):
         self.name = name
@@ -68,13 +67,29 @@ class Superhero:
             self.energy -= 15
             print(f"{self.name} heals rapidly")
 
-# Example usage
+    def mind_reading(self):
+        if self.energy >= 20:
+            self.add_power("Mind Reading")
+            self.energy -= 20
+            print(f"{self.name} reads minds")
+
+    def shape_shift(self):
+        if self.energy >= 40:
+            self.add_power("Shape Shifting")
+            self.energy -= 40
+            print(f"{self.name} changes shape")
+
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, "Hero")
     thor = Superhero("Thor", ["Lightning", "Strength"], "Asgard", ["Loki"], 1500, "Hero")
     loki = Superhero("Loki", ["Magic", "Illusion"], "Jotunheim", ["Thor"], 1050, "Anti-Hero")
+    
+    spiderman = Superhero("Spider-Man", ["Webs"], "New York", ["IronMan"], 17, "Hero")
+    thanos = Superhero("Thanos", ["Strength"], "Titan", [], 1000, "Villain")
+
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
 
-    
+    print(f"{spiderman.name} is a good guy")
+    print(f"{thanos.name} is a bad guy")
