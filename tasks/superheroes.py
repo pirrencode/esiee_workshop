@@ -2,13 +2,14 @@
 
 
 class Superhero:
-    def __init__(self, name, powers, origin, friends, age):
+    def __init__(self, name, powers, origin, friends, age, role):
         self.name = name
         self.powers = list(powers)
         self.origin = origin
         self.friends = friends
         self.age = age
         self.energy = 100
+        self.role = role
 
     def print_name(self):
         print(self.name)
@@ -20,6 +21,7 @@ class Superhero:
         print(self.origin)
         print(self.friends)
         print(self.age)
+        print(self.role)
 
     def add_power(self, power):
         if power not in self.powers:
@@ -54,10 +56,35 @@ class Superhero:
             self.energy -= 20
             print(f"{self.name} shoots lasers from eyes")
 
+    def dance(self):
+        if self.energy >= 50:
+            self.add_power("Dance on you")
+            self.energy -= 50
+            print(f"{self.name} Leg Danceeeeee")
+
+    def mock(self):
+        if self.energy >= 100:
+            self.add_power("Mock")
+            self.energy -= 100
+            print(f"{self.name} mock his opponent")
+        
 
 # Example usage
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, "Leader")
+    batman = Superhero("Batman", ["intelligence"], "Gotham", "Robin", 40, "Detective")
     ironman.print_name()
     ironman.print_attributes()
+
+    batman.print_name()
+    batman.print_attributes()
+
     ironman.fly()
+    ironman.shoot_lasers()
+    ironman.teleportation()
+
+    batman.turn_invisible()
+    batman.super_strength()
+    batman.dance()
+    batman.mock()
+    
