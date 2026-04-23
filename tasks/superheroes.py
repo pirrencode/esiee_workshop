@@ -7,7 +7,7 @@ class Superhero:
         self.powers = list(powers)
         self.origin = origin
         self.friends = friends
-        sel.alignment = ""
+        sel.alignment = "Good"
         self.age = age
         self.energy = 100
 
