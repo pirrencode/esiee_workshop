@@ -76,3 +76,11 @@ if __name__ == "__main__":
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
+
+    superman.print_name()
+    superman.print_attributes()
+    superman.armor()
+
+    batman.print_name()
+    batman.print_attributes()
+    batman.magic_resistance()
