@@ -7,6 +7,7 @@ class Superhero:
         self.powers = list(powers)
         self.origin = origin
         self.friends = friends
+        sel.alignment = alignment
         self.age = age
         self.alignment = alignment
         self.energy = 100
@@ -44,6 +45,19 @@ class Superhero:
             self.energy -= 10
             print(f"{self.name} becomes strong")
 
+    def armor(self):
+        if self.energy >= 5:
+            self.add_power("Armor grown")
+            self.energy -= 5
+            print(f"{self.name} becomes strong")
+
+    def magic_resistance(self):
+        if self.energy >= 5:
+            self.add_power("Magic resist grown")
+            self.energy -= 5
+            print(f"{self.name} becomes strong")
+
+    
     def teleportation(self):
         if self.energy >= 10:
             self.add_power("Teleportation")
@@ -70,11 +84,20 @@ class Superhero:
 
 # Example usage
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", "Good", 35)
+    superman = Superhero("Superman", ["heart"], "Earth", "Superwoman","Good", 65)
+    batman = Superhero("Batman", ["Shadow"], "Earth", "Robin", "Bad", 22)
     thor = Superhero("Thor", ["Lightning", "Strength"], "Asgard", ["Loki"], 1500, "Hero")
     loki = Superhero("Loki", ["Magic", "Illusion"], "Jotunheim", ["Thor"], 1050, "Anti-Hero")
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
 
+    superman.print_name()
+    superman.print_attributes()
+    superman.armor()
+
+    batman.print_name()
+    batman.print_attributes()
+    batman.magic_resistance()
     
