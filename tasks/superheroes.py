@@ -2,14 +2,15 @@
 
 
 class Superhero:
-    def __init__(self, name, powers, origin, friends, age, alignement):
+    def __init__(self, name, powers, origin, friends, age, alignment):
         self.name = name
         self.powers = list(powers)
         self.origin = origin
         self.friends = friends
         self.age = age
         self.energy = 100
-        self.alignement = alignement
+        self.alignment = alignment
+
 
     def print_name(self):
         print(self.name)
@@ -21,6 +22,7 @@ class Superhero:
         print(self.origin)
         print(self.friends)
         print(self.age)
+        print(self.alignment)
 
     def add_power(self, power):
         if power not in self.powers:
@@ -69,10 +71,23 @@ class Superhero:
         self.energy -= 30
         print(f"{self.name} becomes the size of a green pea")
 
+    def time_travel(self):
+        if self.energy >= 30:
+            self.add_power("Time Travel")
+            self.energy -= 30
+            print(f"{self.name} travels through time")
+
+    def heal(self):
+        if self.energy >= 15:
+            self.add_power("Healing")
+            self.energy -= 15
+            print(f"{self.name} heals rapidly")
 
 # Example usage
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, "Good")
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    thor = Superhero("Thor", ["Lightning", "Strength"], "Asgard", ["Loki"], 1500, "Hero")
+    loki = Superhero("Loki", ["Magic", "Illusion"], "Jotunheim", ["Thor"], 1050, "Anti-Hero")
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
@@ -86,3 +101,4 @@ if __name__ == "__main__":
     flash.print_name()
     flash.print_attributes()
     flash.ultra_speed()
+    
