@@ -2,14 +2,14 @@
 
 
 class Superhero:
-    def __init__(self, name, powers, origin, friends, age, alignment):
+    def __init__(self, name, powers, origin, friends, age):
         self.name = name
         self.powers = list(powers)
         self.origin = origin
         self.friends = friends
         self.age = age
-        self.alignment = alignment
         self.energy = 100
+        self.good_guy = True
 
     def print_name(self):
         print(self.name)
@@ -21,7 +21,6 @@ class Superhero:
         print(self.origin)
         print(self.friends)
         print(self.age)
-        print(self.alignment)
 
     def add_power(self, power):
         if power not in self.powers:
@@ -55,26 +54,44 @@ class Superhero:
             self.add_power("Shoot Lasers")
             self.energy -= 20
             print(f"{self.name} shoots lasers from eyes")
-
-    def time_travel(self):
-        if self.energy >= 30:
-            self.add_power("Time Travel")
-            self.energy -= 30
-            print(f"{self.name} travels through time")
-
+            
     def heal(self):
-        if self.energy >= 15:
-            self.add_power("Healing")
-            self.energy -= 15
-            print(f"{self.name} heals rapidly")
+        if self.energy >= 10:
+            self.add_power("Heal")
+            self.energy -= 30
+            print(f"{self.name} instantly heal a hurt")
+            
+    def magnet(self):
+        if self.energy >= 10:
+            self.add_power("Magnet")
+            self.energy -= 20
+            print(f"{self.name} Magnetize metal objects")
+            
+    def super_speed(self):
+        if self.energy >= 10:
+            self.add_power("Super Speed")
+            self.energy -= 20
+            print(f"{self.name} runs at super speed")
+
 
 # Example usage
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
-    thor = Superhero("Thor", ["Lightning", "Strength"], "Asgard", ["Loki"], 1500, "Hero")
-    loki = Superhero("Loki", ["Magic", "Illusion"], "Jotunheim", ["Thor"], 1050, "Anti-Hero")
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, good_guy=True)
+    magneto = Superhero("Magneto", ["magnetism"], "Earth", "Mystique", 60 , good_guy=False)
+    quicksilver = Superhero("Quicksilver", ["super speed"], "Earth", "Scarlet Witch", 30 , good_guy=True)
+    invisible_woman = Superhero("Invisible", ["invisibility"], "Earth", "Mr. Fantastic", 28 , good_guy=True)
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
-
-    
+    ironman.shoot_lasers()
+    magneto.print_name()
+    magneto.print_attributes()
+    magneto.magnet()
+    magneto.fly()
+    quicksilver.print_name()
+    quicksilver.print_attributes()
+    quicksilver.super_speed()
+    quicksilver.heal()
+    invisible_woman.print_name()
+    invisible_woman.print_attributes()
+    invisible_woman.turn_invisible()
