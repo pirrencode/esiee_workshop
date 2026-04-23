@@ -1,49 +1,73 @@
-import unittest
-from france_facts import FranceFacts
+"""Simple superhero utilities."""
 
 
-class TestFranceFacts(unittest.TestCase):
+class Superhero:
+    def __init__(self, name, powers, origin, friends, age):
+        self.name = name
+        self.powers = list(powers)
+        self.origin = origin
+        self.friends = friends
+        self.age = age
+        self.energy = 100
 
-    def setUp(self):
-        self.app = FranceFacts()
+    def print_name(self):
+        print(self.name)
 
-    def test_country_name(self):
-        self.assertEqual(self.app.country, "France")
+    def print_attributes(self):
+        print("Superhero attributes are:")
+        print(self.name)
+        print(self.powers)
+        print(self.origin)
+        print(self.friends)
+        print(self.age)
 
-    def test_capital_name(self):
-        self.assertEqual(self.app.capital, "Paris")
+    def add_power(self, power):
+        if power not in self.powers:
+            self.powers.append(power)
 
-    def test_population(self):
-        self.assertEqual(self.app.population_millions, 68)
+    def fly(self):
+        self.add_power("Flight")
+        self.energy -= 50
+        print(f"{self.name} takes off into the sky")
 
-    def test_show_fact_valid_topic(self):
-        result = self.app.show_fact("capital")
-        self.assertEqual(result, "Paris is the capital of France.")
+    def turn_invisible(self):
+        if self.energy >= 1:
+            self.add_power("Invisibility")
+            self.energy -= 1
+            print(f"{self.name} becomes completely invisible")
 
-    def test_show_fact_no_idea(self):
-        result = self.app.show_fact("no_idea")
-        self.assertEqual(result, "Excuse me, I do not have idea for this.")
+    def super_strength(self):
+        if self.energy >= 10:
+            self.add_power("Super Strength")
+            self.energy -= 10
+            print(f"{self.name} becomes strong")
 
-    def test_show_fact_invalid_topic(self):
-        result = self.app.show_fact("sports")
-        self.assertEqual(result, "Sorry, I do not have a fact for that topic.")
+    def teleportation(self):
+        if self.energy >= 10:
+            self.add_power("Teleportation")
+            self.energy -= 10
+            print(f"{self.name} instantly teleports")
 
-    def test_count_famous_things(self):
-        result = self.app.count_famous_things()
-        self.assertEqual(result, 5)
+    def fly(self):
+        self.add_power("steal_without_seeing")
+        self.energy -= 50
+        print(f"{self.name} stealing car ")
 
-    def test_guess_capital_correct(self):
-        result = self.app.guess_capital("Paris")
-        self.assertEqual(result, "Correct! Paris is the capital of France.")
 
-    def test_guess_capital_correct_lowercase(self):
-        result = self.app.guess_capital("paris")
-        self.assertEqual(result, "Correct! Paris is the capital of France.")
+    def fly(self):
+        self.add_power("teleporation")
+        self.energy -= 50
+        print(f"{self.name} can travel all over the world ")            
 
-    def test_guess_capital_wrong(self):
-        result = self.app.guess_capital("Riga")
-        self.assertEqual(result, "Not quite. The correct answer is Paris.")
+    def shoot_lasers(self):
+        if self.energy >= 20:
+            self.add_power("Shoot Lasers")
+            self.energy -= 20
+            print(f"{self.name} shoots lasers from eyes")
 
 
 if __name__ == "__main__":
-    unittest.main()
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    ironman.print_name()
+    ironman.print_attributes()
+    ironman.fly()
