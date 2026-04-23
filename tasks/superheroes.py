@@ -2,13 +2,14 @@
 
 
 class Superhero:
-    def __init__(self, name, powers, origin, friends, age):
+    def __init__(self, name, powers, origin, friends, age, alignment):
         self.name = name
         self.powers = list(powers)
         self.origin = origin
         self.friends = friends
         self.age = age
         self.energy = 100
+        self.alignment = [alignment] 
 
     def print_name(self):
         print(self.name)
@@ -20,11 +21,15 @@ class Superhero:
         print(self.origin)
         print(self.friends)
         print(self.age)
+        print(f"Alignment: {self.alignment}")
+
+    def add_alignment(self, alignment):
+        if alignment not in self.alignment:
+            self.alignment.append(alignment)
 
     def add_power(self, power):
         if power not in self.powers:
             self.powers.append(power)
-
     def fly(self):
         self.add_power("Flight")
         self.energy -= 50
@@ -53,11 +58,28 @@ class Superhero:
             self.add_power("Shoot Lasers")
             self.energy -= 20
             print(f"{self.name} shoots lasers from eyes")
+    def super_speed(self):
+         if self.energy >= 5:
+            self.add_power("Super Speed")
+            self.energy -= 5
+            print(f"{self.name} moves at incredible speed")
+
+    def shield(self):
+         if self.energy >= 15:
+            self.add_power("Shield")
+            self.energy -= 15
+            print(f"{self.name} creates a protective shield")
+         else:
+            print(f"{self.name} is too tired!")
+
+
 
 
 # Example usage
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, "good")
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
+    ladybug = Superhero("LadyBug", ["speed"], "earth", "doggy", 750, "good")
+    Bloom = Superhero("Bloom", ["fire"], "sun", "rabbit", 800, "leader")
