@@ -42,6 +42,19 @@ class Superhero:
             self.energy -= 10
             print(f"{self.name} becomes strong")
 
+    def armor(self):
+        if self.energy >= 5:
+            self.add_power("Armor grown")
+            self.energy -= 5
+            print(f"{self.name} becomes strong")
+
+    def magic_resistance(self):
+        if self.energy >= 5:
+            self.add_power("Magic resist grown")
+            self.energy -= 5
+            print(f"{self.name} becomes strong")
+
+    
     def teleportation(self):
         if self.energy >= 10:
             self.add_power("Teleportation")
