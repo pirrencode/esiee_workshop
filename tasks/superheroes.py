@@ -71,6 +71,8 @@ class Superhero:
 # Example usage
 if __name__ == "__main__":
     ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
+    superman = Superhero("Superman", ["heart"], "Earth", "Superwoman", 65)
+    batman = Superhero("Batman", ["Shadow"], "Earth", "Robin", 22)
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
