@@ -1,53 +1,28 @@
-"""Simple multi-level inheritance example with a Platypus class."""
-
-from __future__ import annotations
-
-from abc import ABC, abstractmethod
-
-
-class Animal(ABC):
-
-    """Base class representing generic animals."""
-
-    def __init__(self, name: str) -> None:
+class Animal:
+    def __init__(self, name):
         self.name = name
 
-    def describe(self) -> str:
-        """Return a short description of the animal."""
-        return f"{self.name} is an animal"
+    def make_sound(self):
+        pass
 
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof"
 
-class Mammal(Animal):
-    """Mammal extends :class:`Animal` with mammal-specific features."""
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow"
 
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.warm_blooded = True
+class Bird(Animal):
+    def make_sound(self):
+        return "kwikwi"
 
-    def feed_milk(self) -> str:
-        """Return a description of nursing the young."""
-        return f"{self.name} nurses its young"
+# Instantiation
+dog = Dog("Rex")
+cat = Cat("Felix")
+bird = Bird("Skye")
 
-
-
-    """Platypus is a mammal that also lays eggs."""
-
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.can_swim = True
-        self.has_bill = True
-
-
-        return f"{self.name} lays eggs"
-
-    def swim(self) -> str:
-        """Return a string describing swimming."""
-        return f"{self.name} paddles through the water"
-
-
-if __name__ == "__main__":
-    perry = Platypus("Perry")
-    print(perry.describe())
-    print(perry.feed_milk())
-    print(perry.lay_eggs())
-    print(perry.swim())
+# Simple prints without f-strings
+print(dog.name, "makes sound", dog.make_sound())
+print(cat.name, "makes sound", cat.make_sound())
+print(bird.name, "makes sound", bird.make_sound())
