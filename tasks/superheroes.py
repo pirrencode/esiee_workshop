@@ -8,8 +8,9 @@ class Superhero:
         self.origin = origin
         self.friends = friends
         self.age = age
-        self.alignment = alignment
         self.energy = 100
+        self.alignment = alignment
+
 
     def print_name(self):
         print(self.name)
@@ -56,6 +57,20 @@ class Superhero:
             self.energy -= 20
             print(f"{self.name} shoots lasers from eyes")
 
+    def ultra_speed(self):
+        if self.energy < 15
+            return
+        self.add_power("Ultra Speed")
+        self.energy -= 15
+        print(f"{self.name} reaches the speed of light")
+
+    def liliput_size(self):
+        if self.energy < 30:
+            return
+        self.add_power("Liliput Size")
+        self.energy -= 30
+        print(f"{self.name} becomes the size of a green pea")
+
     def time_travel(self):
         if self.energy >= 30:
             self.add_power("Time Travel")
@@ -77,4 +92,13 @@ if __name__ == "__main__":
     ironman.print_attributes()
     ironman.fly()
 
+    miniman = Superhero("Miniman", [], "Venus", ["Michael Jackson", "Kim Jong Il"], 134, "Bad")
+    miniman.print_name()
+    miniman.print_attributes()
+    miniman.liliput_size()
+
+    flash = Superhero("Flash", [], "CEV31", ["Elon Musk", "Spongebob", "Miniman"], 9, "Bad")
+    flash.print_name()
+    flash.print_attributes()
+    flash.ultra_speed()
     
