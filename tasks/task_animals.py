@@ -4,3 +4,32 @@
 # Subclasses: Dog, Cat, Bird with custom implementations of make_sound()
 # Instantiate each and call make_sound()
 ##################
+
+class Animal:
+    def __init__(self,race,sound):
+        self.race = race
+        self.sound = sound
+    def make_sound(self):
+        print(f"{self.race} says : {self.sound}")
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name, "Bark")
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name, "Meow")
+
+class Bird(Animal):
+    def __init__(self, name):
+        super().__init__(name, "PiouPiou")
+
+
+dog1 = Dog("Oslo")
+cat1 = Cat("Aziza")
+bird1 = Bird("Coco")
+
+
+dog1.make_sound()
+cat1.make_sound()
+bird1.make_sound()
