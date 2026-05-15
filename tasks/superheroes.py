@@ -1,6 +1,3 @@
-"""Simple superhero utilities."""
-
-
 class Superhero:
     def __init__(self, name, powers, origin, friends, age, alignment):
         self.name = name
@@ -8,7 +5,7 @@ class Superhero:
         self.origin = origin
         self.friends = friends
         self.age = age
-        self.alignment = alignment
+        self.alignment = alignment  # New alignment parameter added
         self.energy = 100
 
     def print_name(self):
@@ -28,9 +25,12 @@ class Superhero:
             self.powers.append(power)
 
     def fly(self):
-        self.add_power("Flight")
-        self.energy -= 50
-        print(f"{self.name} takes off into the sky")
+        if self.energy >= 50:
+            self.add_power("Flight")
+            self.energy -= 50
+            print(f"{self.name} takes off into the sky")
+        else:
+            print(f"{self.name} is too tired to fly")
 
     def turn_invisible(self):
         if self.energy >= 1:
@@ -56,25 +56,40 @@ class Superhero:
             self.energy -= 20
             print(f"{self.name} shoots lasers from eyes")
 
-    def time_travel(self):
-        if self.energy >= 30:
-            self.add_power("Time Travel")
-            self.energy -= 30
-            print(f"{self.name} travels through time")
-
-    def heal(self):
+    # --- NEW POWERS ---
+    def mind_reading(self):
         if self.energy >= 15:
-            self.add_power("Healing")
+            self.add_power("Mind Reading")
             self.energy -= 15
-            print(f"{self.name} heals rapidly")
+            print(f"{self.name} is now reading the room's thoughts")
+            
+    def time_travel(self):
+        if self.energy >= 80:
+            self.add_power("Time Travel")
+            self.energy -= 80
+            print(f"{self.name} has leaped through time")
+        else:
+            print(f"{self.name} doesn't have enough energy to time travel")
+
 
 # Example usage
 if __name__ == "__main__":
-    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35)
-    thor = Superhero("Thor", ["Lightning", "Strength"], "Asgard", ["Loki"], 1500, "Hero")
-    loki = Superhero("Loki", ["Magic", "Illusion"], "Jotunheim", ["Thor"], 1050, "Anti-Hero")
+    print("--- Hero 1 ---")
+    ironman = Superhero("IronMan", ["tech"], "Earth", "Pepper", 35, "Good")
     ironman.print_name()
     ironman.print_attributes()
     ironman.fly()
-
+    
+    print("\n--- Hero 2 ---")
+    professor_x = Superhero("Professor X", ["Telepathy"], "Earth", "Magneto", 55, "Good")
+    professor_x.print_name()
+    professor_x.print_attributes()
+    professor_x.mind_reading()
+    
+    print("\n--- Hero 3 ---")
+    loki = Superhero("Loki", ["Illusion Magic"], "Asgard", "Thor (sometimes)", 1054, "Anti-Hero")
+    loki.print_name()
+    loki.print_attributes()
+    loki.teleportation()
+    loki.time_travel()
     
